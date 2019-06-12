@@ -53,6 +53,7 @@
   font-weight: semi-bold;
   text-transform: uppercase;
 }
+
 hr {
   display: block;
   // height: 1px;
@@ -62,26 +63,70 @@ hr {
   // padding: 0;
 }
 
+textarea.is-invalid {
+  background-image: none !important; // remove red X
+}
+
+.form-control {
+  // border-radius: 5px;
+  display: inline-block;
+}
+
+.sidebox-card {
+  // card overrides
+  background-color: theme-color(light);
+  border-radius: 0px;
+  // border: 0;
+  border-bottom: 4px theme-color(bcgold) solid;
+}
+.sidebox-card-info {
+  // card overrides
+  background-color: theme-color(primary);
+  border-radius: 0px;
+  border: 0;
+  border-bottom: 4px theme-color(bcgold) solid;
+}
+
+
+.form-check-input{
+  // the silly checkboxes are high and the text is low
+  position: relative;
+  top: 0em;
+}
+
+app-form-field {
+  margin-top: 5px;
+}
+
+//----------OLD STUFF BELOW THIS LINE
+
 // html {
 //   background: #fff;
+//   font-size: 10px;
 // }
 
-// body {
-//   color: $font-color;
+body {
+  color: $font-color;
 //   -webkit-font-smoothing: antialiased;
 //   -moz-osx-font-smoothing: grayscale;
-//   font-family: MyriadWebPro, Calibri, Arial, "sans serif";
-//   font-weight: 400;
-// }
+  font-size: 14px;
+  line-height: 20px;
+}
 
-// h1, h2, h3,
-// .h1, .h2, .h3 {
-//   color: $font-color;
-// }
+h1 {
+  font-size: 36px;
+  font-weight: 500;
+}
 
-// h1, .h1 {
-//   font-size: 36px;
-// }
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+}
 
 // h2, .h2 {
 //   font-size: 24px;
@@ -100,60 +145,34 @@ hr {
 //   font-size: 16px;
 // }
 
-// p {
-//   font-size: 14px;
-// }
+p {
+  // font-size: 14px;
+  line-height: 1.5;
+}
 
 // a {
 //   color: #1a5a96;
 // }
 
-// .btn.btn-primary {
-//   color: $white;
-//   background-color: $bg-dark;
-//   border: $bg-dark 1px solid;
-//   border-radius: 5px;
-//   font-size: 16px;
-//   font-weight: 600;
-//   line-height: 1.5;
-//   min-width: 120px;
-//   padding: 0.5rem 2rem;
+.btn.btn-primary {
+  font-weight: 600;
+  line-height: 1.25;
+  min-width: 120px;
+  padding: 7px 20px;
+}
 
-//   &:hover {
-//     background-color: #38598a;
-//   }
-// }
-
-// .btn.btn-secondary {
-//   color: $bg-dark;
-//   background-color: $white;
-//   border: $bg-dark 1px solid;
-//   border-radius: 5px;
-//   font-size: 16px;
-//   font-weight: 600;
-//   line-height: 1.5;
-//   min-width: 120px;
-//   padding: 0.5rem 2rem;
-
-//   &:hover {
-//     color: $white;
-//     background-color: $bg-dark;
-//   }
-
-//   &:focus {
-//     border-color: $white;
-//     // same as primary button:
-//     box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
-//   }
-
-//   &:not(:disabled):active {
-//     // same as primary button:
-//     background-color: #0062cc;
-//     border-color: #005cbf;
-//   }
-// }
+.btn.btn-outline-primary {
+  font-weight: 600;
+  line-height: 1.25;
+  min-width: 120px;
+  padding: 7px 20px;
+}
 
 textarea.is-invalid {
+  background-image: none !important; // remove red X
+}
+
+select.is-invalid {
   background-image: none !important; // remove red X
 }
 
@@ -162,14 +181,28 @@ textarea.is-invalid {
   display: inline-block;
 }
 
+// extension to Bootstrap styles
+.display-5 {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.display-6 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
 // // this breaks text/arrow layout in FF
 // // select.form-control:not([size]):not([multiple]) {
 // //   height: auto;
 // // }
 
-// select.is-invalid {
-//   background-image: none !important; // remove red X
-// }
+label {
+  // max-width: 100%;
+  font-weight: 700;
+}
 
 // .form-control {
 //   // border-radius: 5px;
@@ -187,35 +220,40 @@ textarea.is-invalid {
 //   }
 // }
 
-// .round-icon-wrapper {
-//   height: 48px;
-//   width: 48px;
-//   min-width: 48px;
-//   min-height: 48px;
-//   border-radius: 48px;
-//   background-color: #7596c8;
-//   text-align: center;
-//   display: inline-block;
-//   padding-top: 12px;
-// }
+.round-icon-wrapper {
+  // Used for self registration background of fontawesome check
+  height: 48px;
+  width: 48px;
+  min-width: 48px;
+  min-height: 48px;
+  border-radius: 48px;
+  background-color: #7596c8;
+  text-align: center;
+  display: inline-block;
+  padding-top: 12px;
+}
 
+.multi-line {
+  white-space: pre-wrap;
+  word-break: break-all;
+  padding: 1rem;
+}
 
+// Flexbox helpers
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
 
-// // Flexbox helpers
-// .space-between {
-//   display: flex;
-//   justify-content: space-between;
-// }
+.flex-end {
+  display: flex;
+  justify-content: flex-end;
+}
 
-// .flex-end {
-//   display: flex;
-//   justify-content: flex-end;
-// }
-
-// .items-center {
-//   display: flex;
-//   align-items: center;
-// }
+.items-center {
+  display: flex;
+  align-items: center;
+}
 
 // .form-wrapper {
 //   padding-left: 50px;
@@ -242,9 +280,9 @@ textarea.is-invalid {
 //   display: inline-block;
 // }
 
-// .padded-section {
-//   padding-left: 15px;
-// }
+.padded-section {
+  padding-left: 15px;
+}
 
 // .notes {
 //   background-color: #f2f2f2;
@@ -289,20 +327,20 @@ textarea.is-invalid {
 //   }
 // }
 
-// .arrow {
-//   list-style: none;
-//   margin-left: 0;
-//   padding-left: 1.2em;
-//   text-indent: -1.2em;
-// }
+.arrow {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 1.2em;
+  text-indent: -1.2em;
+}
 
-// ul.arrow>li:before {
-//   content: "►";
-//   display: block;
-//   float: left;
-//   width: 1.2em;
-//   color: #fcba19;
-// }
+ul.arrow>li:before {
+  content: "►";
+  display: block;
+  float: left;
+  width: 1.2em;
+  color: #fcba19;
+}
 
 // .default-ul {
 //   list-style: initial;
@@ -350,24 +388,13 @@ textarea.is-invalid {
 //   }
 // }
 
-// // overrides for mygovbc-bootstrap-theme
-// .modal.fade .modal-dialog {
-//   transform: none; // original value pushes modal above top of page
-// }
-
-// .modal-backdrop.fade {
-//   opacity: 0.5;
-// }
-
-// .modal.show {
-//   opacity: 1;
-// }
-
-// .modal-small .modal-dialog {
-//   max-width: 350px;
-// }
-
 // input[type=checkbox],
 // input[type=radio] {
 //   top: 3px;
 // }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
